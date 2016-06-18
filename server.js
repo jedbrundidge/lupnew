@@ -12,7 +12,6 @@ var ejs = require('ejs');
 var mongoose = require('mongoose');
 var _ = require('lodash');
 
-
 var app = express();
 
 app.use(cors());
@@ -30,5 +29,18 @@ app.get('/', function (req, res) {
     res.render('index.html');
 });
 
-app.listen(3000);
-console.log('newlup is up and running on port 3000');
+mongoose.connect('mongodb://localhost/LupusSpiel');
+mongoose.connection.on('open', function () {
+
+    app.models = require('./server/models/index');
+
+    var routes = require('./server/routes');
+    _.each(routes, function (controller, route) {
+        app.use(route, controller(app, route));
+    });
+    
+    app.listen(3000);
+    console.log('lupnew is up and running on port 3000');
+});
+
+
