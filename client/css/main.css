@@ -15,6 +15,8 @@ nav {
   width: 100%;
   position: absolute;
   top: 50%;
+  z-index: 1000;
+  background-color: white;
   border-bottom: solid teal 3px;
   border-top: solid teal 3px; }
   nav #links {
@@ -69,8 +71,31 @@ nav {
 #mainContntArea {
   position: absolute;
   width: 100%;
-  border: solid black 3px;
   top: 65%; }
+
+#teamsTable {
+  position: relative;
+  width: 90%;
+  border: solid salmon 6px;
+  border-radius: 10px;
+  box-shadow: -3px -3px 5px 0px rgba(0, 0, 0, 0.75);
+  left: 4.5%; }
+
+.tableHeader {
+  font-size: 1.3em;
+  font-family: Raleway;
+  color: black; }
+
+.tableBody {
+  color: teal;
+  font-size: 1.2em; }
+
+h1 {
+  text-align: center; }
+
+.header {
+  color: saddlebrown;
+  font-family: Raleway; }
 
 html, body {
   outline: 0;
