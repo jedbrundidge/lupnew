@@ -1,7 +1,7 @@
 header {
   height: 50%;
   width: 100%;
-  position: fixed; }
+  position: absolute; }
   header #headerBGDiv {
     height: 100%;
     width: 100%;
@@ -9,6 +9,65 @@ header {
     header #headerBGDiv #headerBGImage {
       height: 100%;
       width: 100%; }
+
+nav {
+  height: 15%;
+  width: 100%;
+  position: absolute;
+  top: 50%;
+  border-bottom: solid teal 3px;
+  border-top: solid teal 3px; }
+  nav #links {
+    position: relative;
+    height: 45%;
+    width: 60%;
+    float: right;
+    text-align: center;
+    padding-top: 4%; }
+  nav ul li {
+    list-style-type: none;
+    display: inline;
+    padding-right: 3%; }
+    nav ul li a {
+      font-size: 2em;
+      position: relative;
+      font-family: Raleway;
+      text-decoration: none;
+      padding-bottom: 5px;
+      color: teal;
+      -moz-transition: 0.4s;
+      -o-transition: 0.4s;
+      -webkit-transition: 0.4s;
+      transition: 0.4s; }
+    nav ul li a:hover {
+      color: #761c19;
+      text-decoration: none !important; }
+    nav ul li a:after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      border-bottom: solid #761c19 3px;
+      -moz-transition: 0.4s;
+      -o-transition: 0.4s;
+      -webkit-transition: 0.4s;
+      transition: 0.4s; }
+    nav ul li a:hover:after {
+      width: 100%; }
+    nav ul li a:focus {
+      outline: none;
+      color: #761c19;
+      text-decoration: none;
+      border-bottom: solid #761c19 3px; }
+
+#lupusLogo {
+  height: 98%;
+  width: 30%;
+  position: absolute; }
+
+section {
+  height: 5000px; }
 
 html, body {
   outline: 0;
