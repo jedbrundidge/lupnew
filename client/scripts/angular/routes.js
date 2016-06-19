@@ -37,11 +37,17 @@
             })
     })
 
-        .controller('teamsController', function ($scope, $http) {
-            $http.get('http://localhost:3000/teams').success(function (response) {
-                $scope.teams = response
+        .controller('teamsController', function ($scope, $resource, teamsService) {
+            teamsService.then(function (success) {
+                $scope.teams = success.data;
+            }, function (error) {
+
             });
+        })
+        .factory('teamsService', function ($http) {
+            return $http.get('http://localhost:3000/teams');
         });
+
 
 })();
 
