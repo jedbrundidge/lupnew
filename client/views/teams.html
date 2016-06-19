@@ -1,5 +1,9 @@
 <h1>Teams</h1>
 
-<div>
-  
+<div ng-controller="teamsController">
+<h1 ng-repeat="team in teams">
+    {{team.teamName}}
+    {{team.club}}
+</h1>
 </div>
+

@@ -3,9 +3,9 @@
  */
 (function () {
 
-    var lupus = angular.module('lupus', ['ngRoute']);
+    var lupus = angular.module('lupus', ['ngRoute', 'ngResource']);
 
-    lupus.config(function ($routeProvider) {
+    lupus.config(function ($routeProvider, $resourceProvider) {
         $routeProvider
 
             .when('/', {
@@ -35,7 +35,14 @@
             .when('/directions', {
                 templateUrl: '/views/directions.html'
             })
-    });
+    })
+
+        .controller('teamsController', function ($scope, $http) {
+            $http.get('http://localhost:3000/teams').success(function (response) {
+                $scope.teams = response
+            });
+        });
+
 })();
 
 
